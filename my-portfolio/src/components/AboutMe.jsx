@@ -34,17 +34,17 @@ const AnimatedText = ({ text, color }) => (
     </motion.span>
 );
 
-function AboutMe() {
+export default function AboutMe() {
     const firstPart = "Hi there. ";
     const secondPart = "I'm Heorhii Vasyliev";
 
     return (
         <Box component="section"
             sx={{
+                marginTop:'200px',
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                minHeight: "100vh",
                 flexDirection: "column",
                 textAlign: "inherit",
                 gap: 2
@@ -75,4 +75,3 @@ function AboutMe() {
     );
 }
 
-export default AboutMe;

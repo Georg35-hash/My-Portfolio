@@ -6,7 +6,7 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const navItems = ["Home", "Blog", "Project", "Contact"];
 
-function NavBar({ darkMode, setDarkMode }) {
+export default function NavBar({ darkMode, setDarkMode }) {
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
@@ -55,4 +55,4 @@ function NavBar({ darkMode, setDarkMode }) {
     );
 }
 
-export default NavBar;
+

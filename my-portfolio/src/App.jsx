@@ -1,10 +1,11 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import NavBar from "./components/NavBar";
-import Main from './components/Main'
+import Main from './components/Main';
 import React, { useState, useMemo } from "react";
-
-const App = () => {
+import { GlobalStyles } from "@mui/material";
+import Fotter from './components/Fotter';
+export default function App() {
 
     const [darkMode, setDarkMode] = useState(() => {
         return localStorage.getItem("theme") === "dark";
@@ -22,12 +23,20 @@ const App = () => {
 
     return (
         <ThemeProvider theme={theme}>
-          
-                <NavBar setDarkMode={setDarkMode} darkMode={darkMode} />
-                <Main/>
-                <CssBaseline />
+            <GlobalStyles
+                styles={{
+                    body: {
+                        display: "flex",
+                        justifyContent: 'center'
+                    },
+                }}
+            />
+            <NavBar setDarkMode={setDarkMode} darkMode={darkMode} />
+            <Main />
+            <Fotter />
+            <CssBaseline />
         </ThemeProvider>
     );
 };
 
-export default App;
+
