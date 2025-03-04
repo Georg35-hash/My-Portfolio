@@ -14,20 +14,23 @@ export default function App() {
     const theme = useMemo(() => createTheme({
         palette: {
             mode: darkMode ? "dark" : "light",
-            primary: { main: darkMode ? "#293035" : "#1976d2" },
             background: { default: darkMode ? "#323532" : "#fff" },
-            text: { primary: darkMode ? "#fff" : "#00000 " },
-
+            text: { primary: darkMode ? "#fff" : "#000000" },
+            customColor: {main:"#E4C85A"},
+            secondary: {main:"#ED5F44"}
         }
     }), [darkMode]);
+    
 
     return (
         <ThemeProvider theme={theme}>
             <GlobalStyles
                 styles={{
                     body: {
+                    
                         display: "flex",
-                        justifyContent: 'center'
+                        justifyContent: 'center',
+                        
                     },
                 }}
             />

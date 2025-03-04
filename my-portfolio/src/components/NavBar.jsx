@@ -20,14 +20,14 @@ export default function NavBar({ darkMode, setDarkMode }) {
     };
 
     return (
-        <AppBar components='header' sx={{ background: "#ED5F44" }}>
-            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <AppBar position="sticky" sx={{ background: "#ED5F44", height: "64px" }}> {/* Устанавливаем фиксированную высоту хедера */}
+            <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', height: '100%' }}>
                 <IconButton color="inherit" onClick={handleDrawerToggle} sx={{ display: { sm: "none" } }}>
                     <MenuIcon />
                 </IconButton>
                 <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
                     {navItems.map((item) => (
-                        <Button key={item} sx={{ color: "#fff" }}>
+                        <Button key={item} sx={{ color: "#fff", padding: '8px 16px' }}>
                             {item}
                         </Button>
                     ))}
@@ -54,5 +54,4 @@ export default function NavBar({ darkMode, setDarkMode }) {
         </AppBar>
     );
 }
-
 
