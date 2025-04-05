@@ -6,7 +6,7 @@ import React, { useState, useMemo } from "react";
 import { GlobalStyles } from "@mui/material";
 import Fotter from "./components/Fotter";
 import { BrowserRouter as Router } from "react-router";
-import ThemeSwitcher from "./components/themeSwitcher/ThemeSwitcher"; // Импортируем компонент ThemeSwitcher
+import ThemeSwitcher from "./components/themeSwitcher/ThemeSwitcher";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(

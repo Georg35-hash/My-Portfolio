@@ -9,13 +9,13 @@ export default function MyProjects() {
       id: 1,
       title: "Bed Linen Shop",
       image: bedLinenShop,
-      desc: "Online store for bed linen products",
+      desc: "Online store for bed linen products. This project includes HTML&&CSS, JS, vite as package manager",
     },
     {
       id: 2,
       title: "Pet Shop",
       image: petShop,
-      desc: "Online store for pet products. This project includes working with Redux, Axios, and React Router.",
+      desc: "Online store for pet products. This project includes working with Zustand, Axios, and React Router.",
     },
   ];
 
