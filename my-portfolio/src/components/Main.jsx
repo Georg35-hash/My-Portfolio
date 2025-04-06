@@ -9,7 +9,8 @@ import MySkills from "./MySkills";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
-import MyProjects from "../components/projects/MyProjects";
+import MyProjects from "./projects/MyProjects.jsx";
+
 function Main() {
   const location = useLocation();
 
