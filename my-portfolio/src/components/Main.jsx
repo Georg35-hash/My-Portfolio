@@ -6,11 +6,10 @@ import PostPage from "../pages/PostPage";
 import NavTabs from "../components/layout/NavTabs";
 import AboutMe from "./AboutMe";
 import MySkills from "./MySkills";
-import MyProjects from "../components/projects/MyProjects";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
-
+import MyProjects from "./projects/MyProjects.jsx";
 function Main() {
   const location = useLocation();
 
