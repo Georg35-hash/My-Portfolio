@@ -11,7 +11,7 @@ import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
 import MyProjectsList from "./projects/MyProjectsList.jsx";
 
-function Main() {
+export default function Main() {
   const location = useLocation();
 
   const hiddenTabsPaths = ["/", "/projects", "/contact"];
@@ -74,5 +74,3 @@ function Main() {
     </Box>
   );
 }
-
-export default Main;
