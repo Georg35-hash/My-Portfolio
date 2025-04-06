@@ -9,7 +9,7 @@ import MySkills from "./MySkills";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
-import MyProjects from "./projects/MyProjects.jsx";
+import MyProjectsList from "./projects/MyProjectsList.jsx";
 
 function Main() {
   const location = useLocation();
@@ -37,7 +37,7 @@ function Main() {
             <>
               <AboutMe />
               <MySkills />
-              <MyProjects />
+              <MyProjectsList />
             </>
           }
         />

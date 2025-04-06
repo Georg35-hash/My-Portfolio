@@ -3,7 +3,7 @@ import { Box, Typography } from "@mui/material";
 import bedLinenShop from "../../assets/myprojects/bed-linen-shop.png";
 import petShop from "../../assets/myprojects/pet-shop.png";
 
-export default function MyProjects() {
+export default function MyProjectsList() {
   const projectsList = [
     {
       id: 1,
