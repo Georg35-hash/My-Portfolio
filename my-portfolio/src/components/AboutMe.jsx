@@ -25,7 +25,6 @@ const TypingEffect = ({
           if (!isDeleting) {
             if (prev < animatedText.length) return prev + 1;
 
-            // Текст полностью написан — ставим паузу
             setPause(true);
             setTimeout(() => {
               setIsDeleting(true);
@@ -36,8 +35,6 @@ const TypingEffect = ({
             return prev;
           } else {
             if (prev > 0) return prev - 1;
-
-            // Текст полностью удалён — начинаем писать заново
             setIsDeleting(false);
             return prev;
           }

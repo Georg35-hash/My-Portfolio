@@ -6,7 +6,7 @@ import PostPage from "../pages/PostPage";
 import NavTabs from "../components/layout/NavTabs";
 import AboutMe from "./AboutMe";
 import MySkills from "./MySkills";
-import MyProjects from "../components/projects/MyProjects";
+import MyProjects from "../components/projects/MyProjects.jsx";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
