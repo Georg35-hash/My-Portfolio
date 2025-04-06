@@ -9,7 +9,7 @@ import MySkills from "./MySkills";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
-import MyProjectsList from "./projects/MyProjectsList.jsx";
+import MyProjectList from "./projects/MyProjectList.jsx";
 
 export default function Main() {
   const location = useLocation();
@@ -37,12 +37,12 @@ export default function Main() {
             <>
               <AboutMe />
               <MySkills />
-              <MyProjectsList />
+              <MyProjectList />
             </>
           }
         />
         <Route path="/contact" element={<ContactForm />} />
-        <Route path="/projects" element={<MyProjects />} />
+        <Route path="/projects" element={<MyProjectList />} />
 
         <Route
           path="/recent"
