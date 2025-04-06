@@ -11,8 +11,14 @@ import {
   Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
-const navItems = ["Home", "Blog", "Project", "Contact"];
+const navItems = [
+  { label: "Home", path: "/" },
+  { label: "Blog", path: "/recent" },
+  { label: "Project", path: "/projects" },
+  { label: "Contact", path: "/contact" },
+];
 
 export default function NavBar({ children }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -35,14 +41,21 @@ export default function NavBar({ children }) {
         >
           <MenuIcon />
         </IconButton>
+
         <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
           {navItems.map((item) => (
-            <Button key={item} sx={{ color: "#fff", padding: "8px 16px" }}>
-              {item}
+            <Button
+              key={item.label}
+              component={Link}
+              to={item.path}
+              sx={{ color: "#fff", padding: "8px 16px" }}
+            >
+              {item.label}
             </Button>
           ))}
         </Box>
-        {children} {/* Отображаем компонент ThemeSwitcher */}
+
+        {children}
       </Toolbar>
 
       <Drawer
@@ -53,8 +66,14 @@ export default function NavBar({ children }) {
       >
         <List>
           {navItems.map((item) => (
-            <ListItem key={item} disablePadding>
-              <ListItemButton>{item}</ListItemButton>
+            <ListItem key={item.label} disablePadding>
+              <ListItemButton
+                component={Link}
+                to={item.path}
+                onClick={handleDrawerToggle}
+              >
+                {item.label}
+              </ListItemButton>
             </ListItem>
           ))}
         </List>

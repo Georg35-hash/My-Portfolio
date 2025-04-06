@@ -1,13 +1,17 @@
 import { Box, Typography } from "@mui/material";
-import { usePosts } from "../../context/NewsProdiver";
 import PostCard from "./PostCard";
+import { usePosts } from "../../context/NewsContextProvider";
 
 const RecentNews = () => {
   const { recentPosts } = usePosts();
 
   return (
     <Box sx={{ p: 2 }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography
+        variant="h4"
+        gutterBottom
+        sx={{ color: (theme) => theme.palette.secondary.main }}
+      >
         Recent Posts
       </Typography>
       {recentPosts.map((post) => (

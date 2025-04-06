@@ -1,12 +1,11 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/layout/NavBar";
 import Main from "./components/Main";
 import React, { useState, useMemo } from "react";
 import { GlobalStyles } from "@mui/material";
-import Fotter from "./components/Fotter";
-import { BrowserRouter as Router } from "react-router";
-import ThemeSwitcher from "./components/themeSwitcher/ThemeSwitcher";
+import Fotter from "./components/layout/Footer";
+import ThemeSwitcher from "./components/layout/ThemeSwitcher";
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(
@@ -27,7 +26,6 @@ export default function App() {
     [darkMode]
   );
 
-  // Функция для переключения темы
   const toggleDarkMode = () => {
     setDarkMode((prevMode) => {
       const newMode = !prevMode;
@@ -49,9 +47,7 @@ export default function App() {
       <NavBar>
         <ThemeSwitcher darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </NavBar>
-      <Router>
-        <Main />
-      </Router>
+      <Main />
       <Fotter />
       <CssBaseline />
     </ThemeProvider>

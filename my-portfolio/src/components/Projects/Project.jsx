@@ -45,7 +45,7 @@ export default function Project({ project }) {
             filter: hovered ? "brightness(0.7)" : "brightness(1)",
           }}
           image={project.image}
-          title={project.name}
+          title={project.title}
         />
         <Box
           sx={{
@@ -92,35 +92,39 @@ export default function Project({ project }) {
           paddingBottom: 2,
         }}
       >
-        <Button
-          sx={{
-            color: (theme) => theme.palette.customColor.main,
-          }}
-          size="small"
-          startIcon={
-            <img src={GitHubIcon} alt="GitHub" width={20} height={20} />
-          }
-          href="https://github.com/Georg35-hash/Pet-shop/tree/main/pet-shop"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub
-        </Button>
+        {project.githubLink && (
+          <Button
+            sx={{
+              color: (theme) => theme.palette.customColor.main,
+            }}
+            size="small"
+            startIcon={
+              <img src={GitHubIcon} alt="GitHub" width={20} height={20} />
+            }
+            href={project.githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </Button>
+        )}
 
-        <Button
-          sx={{
-            color: (theme) => theme.palette.customColor.main,
-          }}
-          size="small"
-          startIcon={
-            <img src={LiveDemoIcon} alt="Live Demo" width={20} height={20} />
-          }
-          href="https://pet-shop-react-ebon.vercel.app/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Live Demo
-        </Button>
+        {project.liveDemoLink && (
+          <Button
+            sx={{
+              color: (theme) => theme.palette.customColor.main,
+            }}
+            size="small"
+            startIcon={
+              <img src={LiveDemoIcon} alt="Live Demo" width={20} height={20} />
+            }
+            href={project.liveDemoLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live Demo
+          </Button>
+        )}
       </CardActions>
     </Card>
   );
