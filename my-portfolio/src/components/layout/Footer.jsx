@@ -104,15 +104,27 @@ export default function Footer() {
       </Card>
       <Box sx={{ display: "flex ", mt: 4, justifyContent: "space-between" }}>
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
-        <Box sx={{ g: 2 }}>
-          <a src="https://www.instagram.com/_geraldus_?igsh=N21yNXZ4ZGM1ZTNr&utm_source=qr">
-            <img src={instagram} />
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <a
+            href="https://www.instagram.com/_geraldus_?igsh=N21yNXZ4ZGM1ZTNr&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={instagram} alt="Instagram" />
           </a>
-          <a src="https://github.com/Georg35-hash">
-            <img src={gitHub} />
+          <a
+            href="https://github.com/Georg35-hash"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={gitHub} alt="GitHub" />
           </a>
-          <a src="https://www.linkedin.com/in/heorhii-vasyliev-6a4957300/">
-            <img src={linkedIn} />
+          <a
+            href="https://www.linkedin.com/in/heorhii-vasyliev-6a4957300/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={linkedIn} alt="LinkedIn" />
           </a>
         </Box>
       </Box>
