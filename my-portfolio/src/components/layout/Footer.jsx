@@ -105,9 +105,8 @@ export default function Footer() {
       <Box
         sx={{
           display: "flex ",
-          mt: 4,
           justifyContent: "space-between",
-          margin: "0px 10px 0px 10px",
+          m: "10px 10px 0px 10px",
         }}
       >
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
