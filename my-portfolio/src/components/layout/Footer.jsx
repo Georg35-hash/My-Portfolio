@@ -102,9 +102,9 @@ export default function Footer() {
           </form>
         </CardContent>
       </Card>
-      <Box sx={{ display: "flex ", mt: 20, justifyContent: "space-between" }}>
+      <Box sx={{ display: "flex ", mt: 4, justifyContent: "space-between" }}>
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
-        <Box>
+        <Box sx={{ g: 2 }}>
           <img src={instagram} />
           <img src={gitHub} />
           <img src={linkedIn} />
