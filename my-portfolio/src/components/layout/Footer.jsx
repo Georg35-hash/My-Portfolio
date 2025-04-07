@@ -10,7 +10,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import Notification from "./Notifications";
-
+import gitHub from "../../assets/footer/git-hub.svg";
+import instagram from "../../assets/footer/instagram.svg";
+import linkedIn from "../../assets/footer/linked-in.svg";
 export default function Footer() {
   const [notificationOpen, setNotificationOpen] = useState(false);
 
@@ -100,6 +102,12 @@ export default function Footer() {
           </form>
         </CardContent>
       </Card>
+      <Box sx={{ display: "flex ", justifyContent: "space-between" }}>
+        <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
+        <img src={instagram} />
+        <img src={gitHub} />
+        <img src={linkedIn} />
+      </Box>
       <Notification
         open={notificationOpen}
         message="Subscription successful!"
