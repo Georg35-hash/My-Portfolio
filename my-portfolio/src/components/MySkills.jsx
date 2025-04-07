@@ -1,16 +1,25 @@
 import { Box, Grid2, Typography, Button } from "@mui/material";
 
+import htmlIcon from "../../assets/myskills/html.svg";
+import cssIcon from "../../assets/myskills/css.svg";
+import jsIcon from "../../assets/myskills/js.svg";
+import reactIcon from "../../assets/myskills/react.svg";
+import gitIcon from "../../assets/myskills/git.svg";
+import nodeIcon from "../../assets/myskills/node.svg";
+import dockerIcon from "../../assets/myskills/docker.svg";
+import awsIcon from "../../assets/myskills/aws.svg";
+
 const imgStyle = { minWidth: "60px", height: "60px" };
 
 const skills = [
-  { id: 1, src: "/src/assets/myskills/html.svg", label: "HTML" },
-  { id: 2, src: "/src/assets/myskills/css.svg", label: "CSS" },
-  { id: 3, src: "/src/assets/myskills/js.svg", label: "JS" },
-  { id: 4, src: "/src/assets/myskills/react.svg", label: "REACT" },
-  { id: 5, src: "/src/assets/myskills/git.svg", label: "GIT" },
-  { id: 6, src: "/src/assets/myskills/node.svg", label: "NODE" },
-  { id: 7, src: "/src/assets/myskills/docker.svg", label: "DOCKER" },
-  { id: 8, src: "/src/assets/myskills/aws.svg", label: "AWS" },
+  { id: 1, src: htmlIcon, label: "HTML" },
+  { id: 2, src: cssIcon, label: "CSS" },
+  { id: 3, src: jsIcon, label: "JS" },
+  { id: 4, src: reactIcon, label: "REACT" },
+  { id: 5, src: gitIcon, label: "GIT" },
+  { id: 6, src: nodeIcon, label: "NODE" },
+  { id: 7, src: dockerIcon, label: "DOCKER" },
+  { id: 8, src: awsIcon, label: "AWS" },
 ];
 
 export default function MySkills() {
