@@ -108,6 +108,7 @@ export default function Footer() {
           sx={{
             display: "flex",
             gap: 2,
+            margin: "0px 10px 0px 10px",
             "& a img": {
               width: 32,
               height: 32,

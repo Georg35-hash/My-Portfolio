@@ -27,7 +27,7 @@ export default function Main() {
     isPostPage || hiddenTabsPaths.includes(location.pathname) || is404;
 
   return (
-    <Box>
+    <Box component="main">
       {!hideNavTabs && <NavTabs />}
 
       <Routes>
