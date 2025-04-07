@@ -104,7 +104,28 @@ export default function Footer() {
       </Card>
       <Box sx={{ display: "flex ", mt: 4, justifyContent: "space-between" }}>
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
-        <Box sx={{ display: "flex", gap: 2 }}>
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            "& a img": {
+              width: 32,
+              height: 32,
+              transition: "transform 0.3s ease",
+              "&:hover": {
+                animation: "wiggleRotate 0.6s ease-in-out",
+              },
+            },
+            "@keyframes wiggleRotate": {
+              "0%": { transform: "rotate(0deg) translateY(0)" },
+              "20%": { transform: "rotate(-10deg) translateY(-2px)" },
+              "40%": { transform: "rotate(10deg) translateY(-2px)" },
+              "60%": { transform: "rotate(-6deg) translateY(0)" },
+              "80%": { transform: "rotate(6deg) translateY(1px)" },
+              "100%": { transform: "rotate(0deg) translateY(0)" },
+            },
+          }}
+        >
           <a
             href="https://www.instagram.com/_geraldus_?igsh=N21yNXZ4ZGM1ZTNr&utm_source=qr"
             target="_blank"
