@@ -3,14 +3,14 @@ import { Box, Grid2, Typography, Button } from "@mui/material";
 const imgStyle = { minWidth: "60px", height: "60px" };
 
 const skills = [
-  { id: 1, src: "../../src/assets/myskills/html.svg", label: "HTML" },
-  { id: 2, src: "../../src/assets/myskills/css.svg", label: "CSS" },
-  { id: 3, src: "../../src/assets/myskills/js.svg", label: "JS" },
-  { id: 4, src: "../../src/assets/myskills/react.svg", label: "REACT" },
-  { id: 5, src: "../../src/assets/myskills/git.svg", label: "GIT" },
-  { id: 6, src: "../../src/assets/myskills/node.svg", label: "NODE" },
-  { id: 7, src: "../../src/assets/myskills/docker.svg", label: "DOCKER" },
-  { id: 8, src: "../../src/assets/myskills/aws.svg", label: "AWS" },
+  { id: 1, src: "../assets/myskills/html.svg", label: "HTML" },
+  { id: 2, src: "../assets/myskills/css.svg", label: "CSS" },
+  { id: 3, src: "../assets/myskills/js.svg", label: "JS" },
+  { id: 4, src: "../assets/myskills/react.svg", label: "REACT" },
+  { id: 5, src: "../assets/myskills/git.svg", label: "GIT" },
+  { id: 6, src: "../assets/myskills/node.svg", label: "NODE" },
+  { id: 7, src: "../assets/myskills/docker.svg", label: "DOCKER" },
+  { id: 8, src: "../assets/myskills/aws.svg", label: "AWS" },
 ];
 
 export default function MySkills() {

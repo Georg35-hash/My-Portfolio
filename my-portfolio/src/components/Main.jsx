@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { Routes, Route, useLocation } from "react-router-dom";
-import RecentNews from "../../src/components/News/RecentNews";
-import AllNews from "../../src/components/News/AllNews";
+import RecentNews from "./news/RecentNews.jsx";
+import AllNews from "./news/AllNews.jsx";
 import PostPage from "../pages/PostPage";
-import NavTabs from "../components/layout/NavTabs";
+import NavTabs from "./layout/NavTabs.jsx";
 import AboutMe from "./AboutMe";
 import MySkills from "./MySkills";
 import ContactForm from "../pages/ContactForm";
