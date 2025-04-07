@@ -105,9 +105,15 @@ export default function Footer() {
       <Box sx={{ display: "flex ", mt: 4, justifyContent: "space-between" }}>
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
         <Box sx={{ g: 2 }}>
-          <img src={instagram} />
-          <img src={gitHub} />
-          <img src={linkedIn} />
+          <a src="https://www.instagram.com/_geraldus_?igsh=N21yNXZ4ZGM1ZTNr&utm_source=qr">
+            <img src={instagram} />
+          </a>
+          <a src="https://github.com/Georg35-hash">
+            <img src={gitHub} />
+          </a>
+          <a src="https://www.linkedin.com/in/heorhii-vasyliev-6a4957300/">
+            <img src={linkedIn} />
+          </a>
         </Box>
       </Box>
       <Notification
