@@ -7,7 +7,12 @@ export default function NavTabs() {
   const currentTab = location.pathname === "/all" ? 1 : 0;
 
   return (
-    <AppBar sx={{ marginTop: 5 }} position="static" color="default">
+    <AppBar
+      component="div"
+      sx={{ marginTop: 5 }}
+      position="static"
+      color="default"
+    >
       <Tabs
         value={currentTab}
         textColor="secondary"

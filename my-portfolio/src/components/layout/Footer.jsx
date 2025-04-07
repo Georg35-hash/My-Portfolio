@@ -102,13 +102,19 @@ export default function Footer() {
           </form>
         </CardContent>
       </Card>
-      <Box sx={{ display: "flex ", mt: 4, justifyContent: "space-between" }}>
+      <Box
+        sx={{
+          display: "flex ",
+          mt: 4,
+          justifyContent: "space-between",
+          margin: "0px 10px 0px 10px",
+        }}
+      >
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
         <Box
           sx={{
             display: "flex",
             gap: 2,
-            margin: "0px 10px 0px 10px",
             "& a img": {
               width: 32,
               height: 32,
