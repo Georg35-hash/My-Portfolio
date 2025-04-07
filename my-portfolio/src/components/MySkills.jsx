@@ -1,13 +1,13 @@
 import { Box, Grid2, Typography, Button } from "@mui/material";
 
-import htmlIcon from "../../assets/myskills/html.svg";
-import cssIcon from "../../assets/myskills/css.svg";
-import jsIcon from "../../assets/myskills/js.svg";
-import reactIcon from "../../assets/myskills/react.svg";
-import gitIcon from "../../assets/myskills/git.svg";
-import nodeIcon from "../../assets/myskills/node.svg";
-import dockerIcon from "../../assets/myskills/docker.svg";
-import awsIcon from "../../assets/myskills/aws.svg";
+import htmlIcon from "../assets/myskills/html.svg";
+import cssIcon from "../assets/myskills/css.svg";
+import jsIcon from "../assets/myskills/js.svg";
+import reactIcon from "../assets/myskills/react.svg";
+import gitIcon from "../assets/myskills/git.svg";
+import nodeIcon from "../assets/myskills/node.svg";
+import dockerIcon from "../assets/myskills/docker.svg";
+import awsIcon from "../assets/myskills/aws.svg";
 
 const imgStyle = { minWidth: "60px", height: "60px" };
 
