@@ -21,26 +21,34 @@ const projectsList = [
     liveDemoLink: "https://pet-shop-react-ebon.vercel.app/",
   },
 ];
-
 export default function ProjectList() {
   return (
-    <Box component="section" sx={{ margin: "20px 0" }}>
-      <Typography variant="h3" sx={{ textAlign: "center", marginBottom: 5 }}>
+    <Box sx={{ display: "block", margin: "20px 0 20px 0" }} component="section">
+      <Typography
+        variant="h3"
+        fontFamily="Roboto"
+        sx={{ textAlign: "center", marginBottom: { xs: 3, sm: 4, md: 5 } }}
+      >
         My Projects
       </Typography>
 
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", md: "row" },
+          flexDirection: { xs: "column", sm: "column", md: "row" },
           gap: 4,
+          alignItems: "center",
           justifyContent: "center",
         }}
       >
-        {projectsList.map(({ id, githubLink, liveDemoLink, ...project }) => (
+        {projectsList.map((project) => (
           <Project
-            key={id}
-            project={{ ...project, githubLink, liveDemoLink }}
+            key={project.id}
+            project={{
+              ...project, // Sprea operator to include all properties
+              githubLink: project.githubLink,
+              liveDemoLink: project.liveDemoLink,
+            }}
           />
         ))}
       </Box>
