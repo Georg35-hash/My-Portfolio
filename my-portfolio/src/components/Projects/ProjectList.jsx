@@ -22,7 +22,7 @@ const projectsList = [
   },
 ];
 
-export default function MyProjectList() {
+export default function ProjectList() {
   return (
     <Box component="section" sx={{ margin: "20px 0" }}>
       <Typography variant="h3" sx={{ textAlign: "center", marginBottom: 5 }}>
