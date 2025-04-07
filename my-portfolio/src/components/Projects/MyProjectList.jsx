@@ -45,7 +45,7 @@ export default function MyProjectList() {
           <Project
             key={project.id}
             project={{
-              ...project, // Spread operator to include all properties
+              ...project, // Sprea operator to include all properties
               githubLink: project.githubLink,
               liveDemoLink: project.liveDemoLink,
             }}
