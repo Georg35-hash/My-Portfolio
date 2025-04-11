@@ -1,7 +1,7 @@
 import React from "react";
 import { Snackbar, Alert } from "@mui/material";
 
-export default function Notification({ open, onClose, message, severity }) {
+export default function Notifications({ open, onClose, message, severity }) {
   return (
     <Snackbar
       open={open}
