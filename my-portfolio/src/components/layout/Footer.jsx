@@ -9,7 +9,7 @@ import {
 import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import Notification from "./Notifications";
+import Notification from "./Notification";
 import gitHub from "../../assets/footer/git-hub.svg";
 import instagram from "../../assets/footer/instagram.svg";
 import linkedIn from "../../assets/footer/linked-in.svg";

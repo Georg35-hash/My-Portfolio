@@ -53,6 +53,7 @@ const TypingEffect = ({
         fontSize: { xs: "20px", sm: "24px", md: "26px" },
         fontWeight: "bold",
         fontFamily: "monospace",
+        minWidth: `${staticText.length + animatedText.length}ch`,
       }}
     >
       <span style={{ color: staticColor }}>{staticText}</span>
@@ -98,7 +99,6 @@ export default function AboutMe() {
           }}
         >
           <TypingEffect
-            text="Hi there. I'm Heorhii Vasyliev"
             staticText="Hi there. "
             animatedText="I'm Heorhii Vasyliev"
             staticColor="#ED5F44"
@@ -106,20 +106,20 @@ export default function AboutMe() {
             pipeColor="black"
           />
         </Box>
-
-        <Typography
-          component="p"
-          sx={{
-            maxWidth: { xs: 300, sm: 360, md: 480 },
-            marginTop: 2,
-            fontSize: { xs: "14px", sm: "16px", md: "20px" },
-            textAlign: { xs: "center", md: "left" },
-          }}
-        >
-          I'm a Web Developer and IT Specialist focused on learning new
-          technologies and sharing knowledge with others.
-        </Typography>
-
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Typography
+            component="p"
+            sx={{
+              maxWidth: { xs: 300, sm: 360, md: 480 },
+              marginTop: 2,
+              fontSize: { xs: "14px", sm: "16px", md: "20px" },
+              textAlign: { xs: "center", md: "left" },
+            }}
+          >
+            I'm a Web Developer and IT Specialist focused on learning new
+            technologies and sharing knowledge with others.
+          </Typography>
+        </Box>
         <Box
           sx={{ marginTop: "20px", textAlign: { xs: "center", md: "left" } }}
         >
