@@ -97,15 +97,19 @@ export default function Footer() {
                   textAlign="center"
                 >
                   We care about your security.{" "}
-                  <Link
-                    to="/privacy-policy"
-                    style={{
-                      textDecoration: "none",
-                      fontWeight: "bold",
-                      color: (theme) => theme.palette.secondary.main,
-                    }}
-                  >
-                    Read our privacy policy.
+                  <Link to="/privacy-policy" style={{ textDecoration: "none" }}>
+                    <Box
+                      component="span"
+                      sx={{
+                        fontWeight: "bold",
+                        color: (theme) => theme.palette.secondary.main,
+                        "&:hover": {
+                          textDecoration: "underline",
+                        },
+                      }}
+                    >
+                      Read our privacy policy.
+                    </Box>
                   </Link>
                 </Typography>
               </Box>
