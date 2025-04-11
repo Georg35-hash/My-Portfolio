@@ -99,7 +99,11 @@ export default function Footer() {
                   We care about your security.{" "}
                   <Link
                     to="/privacy-policy"
-                    style={{ textDecoration: "none", fontWeight: "bold" }}
+                    style={{
+                      textDecoration: "none",
+                      fontWeight: "bold",
+                      color: "white",
+                    }}
                   >
                     Read our privacy policy.
                   </Link>
