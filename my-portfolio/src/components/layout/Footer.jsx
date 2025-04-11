@@ -9,6 +9,7 @@ import {
 import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 import Notifications from "./Notifications";
 import gitHub from "../../assets/footer/git-hub.svg";
 import instagram from "../../assets/footer/instagram.svg";
@@ -95,7 +96,13 @@ export default function Footer() {
                   color="text.secondary"
                   textAlign="center"
                 >
-                  We care about your security. <b>Read our privacy policy.</b>
+                  We care about your security.{" "}
+                  <Link
+                    to="/privacy-policy"
+                    style={{ textDecoration: "none", fontWeight: "bold" }}
+                  >
+                    Read our privacy policy.
+                  </Link>
                 </Typography>
               </Box>
             </Box>
