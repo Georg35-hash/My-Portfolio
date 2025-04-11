@@ -102,7 +102,7 @@ export default function Footer() {
                     style={{
                       textDecoration: "none",
                       fontWeight: "bold",
-                      color: "white",
+                      color: (theme) => theme.palette.secondary.main,
                     }}
                   >
                     Read our privacy policy.
