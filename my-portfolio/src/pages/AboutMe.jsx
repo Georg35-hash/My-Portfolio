@@ -5,6 +5,11 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import myPhoto from "../assets/image/photo.jpg";
 import { useEffect, useState } from "react";
 
+import {
+  containerVariants,
+  itemVariants,
+} from "../shared/animations/motionVariants";
+
 const TypingEffect = ({
   staticText,
   animatedText,
@@ -77,9 +82,9 @@ export default function AboutMe() {
   return (
     <Box
       component={motion.section}
-      initial={{ opacity: 0, y: 50 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
       sx={{
         marginTop: "50px",
         display: "flex",
@@ -90,7 +95,7 @@ export default function AboutMe() {
         gap: 4,
       }}
     >
-      <Box sx={{ flex: 1 }}>
+      <motion.div variants={itemVariants} style={{ flex: 1 }}>
         <Box
           sx={{
             display: "flex",
@@ -106,6 +111,7 @@ export default function AboutMe() {
             pipeColor="black"
           />
         </Box>
+
         <Box sx={{ display: "flex", justifyContent: "center" }}>
           <Typography
             component="p"
@@ -120,49 +126,52 @@ export default function AboutMe() {
             technologies and sharing knowledge with others.
           </Typography>
         </Box>
+
         <Box
           sx={{ marginTop: "20px", textAlign: { xs: "center", md: "left" } }}
         >
-          <a
-            href="https://app.cal.com/heorhii"
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ textDecoration: "none" }}
-          >
-            <Button
-              variant="outlined"
-              startIcon={<CalendarMonthIcon />}
-              endIcon={<ArrowForwardIosIcon />}
-              sx={{
-                borderRadius: "24px",
-                textTransform: "none",
-                fontSize: "16px",
-                fontWeight: "bold",
-                padding: "10px 20px",
-                color: "#ff7300",
-                borderColor: "#ff7300",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  backgroundColor: "#ff7300",
-                  color: "#fff",
-                  borderColor: "#ff7300",
-                  boxShadow: "0px 4px 15px rgba(255, 115, 0, 0.4)",
-                },
-              }}
+          <motion.div variants={itemVariants}>
+            <a
+              href="https://app.cal.com/heorhii"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "none" }}
             >
-              Schedule a call
-            </Button>
-          </a>
+              <Button
+                variant="outlined"
+                startIcon={<CalendarMonthIcon />}
+                endIcon={<ArrowForwardIosIcon />}
+                sx={{
+                  borderRadius: "24px",
+                  textTransform: "none",
+                  fontSize: "16px",
+                  fontWeight: "bold",
+                  padding: "10px 20px",
+                  color: "#ff7300",
+                  borderColor: "#ff7300",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    backgroundColor: "#ff7300",
+                    color: "#fff",
+                    borderColor: "#ff7300",
+                    boxShadow: "0px 4px 15px rgba(255, 115, 0, 0.4)",
+                  },
+                }}
+              >
+                Schedule a call
+              </Button>
+            </a>
+          </motion.div>
         </Box>
-      </Box>
+      </motion.div>
 
-      <Box>
+      <motion.div variants={itemVariants}>
         <Avatar
           alt="Heorhii Vasyliev"
           src={myPhoto}
           sx={{ width: 160, height: 160 }}
         />
-      </Box>
+      </motion.div>
     </Box>
   );
 }
