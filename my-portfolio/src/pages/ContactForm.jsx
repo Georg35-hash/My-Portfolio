@@ -3,6 +3,10 @@ import { useForm } from "react-hook-form";
 import Notification from "../components/layout/Notifications";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  containerVariants,
+  itemVariants,
+} from "../shared/animations/motionVariants";
 
 export default function ContactForm() {
   const [notificationOpen, setNotificationOpen] = useState(false);
@@ -16,24 +20,6 @@ export default function ContactForm() {
   const onSubmit = (data) => {
     console.log(data);
     setNotificationOpen(true);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        when: "beforeChildren",
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.4 } },
   };
 
   return (
@@ -52,14 +38,16 @@ export default function ContactForm() {
         style={{ width: "100%", maxWidth: 500 }}
       >
         <Paper elevation={3} sx={{ p: 4 }}>
-          <Typography
-            variant="h4"
-            align="center"
-            gutterBottom
-            fontFamily="Roboto"
-          >
-            Contact Me
-          </Typography>
+          <motion.div variants={itemVariants}>
+            <Typography
+              variant="h4"
+              align="center"
+              gutterBottom
+              fontFamily="Roboto"
+            >
+              Contact Me
+            </Typography>
+          </motion.div>
 
           <Box component="form" onSubmit={handleSubmit(onSubmit)} noValidate>
             <motion.div variants={itemVariants}>
