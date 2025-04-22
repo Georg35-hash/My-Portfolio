@@ -16,7 +16,7 @@ import { Link } from "react-router-dom";
 const navItems = [
   { label: "Home", path: "/" },
   { label: "Blog", path: "/recent" },
-  { label: "Project", path: "/projects" },
+  { label: "Projects", path: "/projects" },
   { label: "Contact", path: "/contact" },
 ];
 
