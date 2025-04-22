@@ -1,5 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
-import Grid2 from "@mui/material/Unstable_Grid2";
+import { Box, Typography, Button, Grid2 } from "@mui/material";
 import { motion } from "framer-motion";
 
 import htmlIcon from "../assets/myskills/html.svg";
