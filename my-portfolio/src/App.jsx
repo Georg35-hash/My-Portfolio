@@ -1,8 +1,8 @@
 import { ThemeProvider, CssBaseline, GlobalStyles } from "@mui/material";
-import NavBar from "./components/layout/NavBar";
+import NavBar from "./components/layouts/NavBar";
 import Main from "./components/Main";
-import Fotter from "./components/layout/Footer";
-import ThemeSwitcher from "./components/layout/ThemeSwitcher";
+import Fotter from "./components/layouts/Footer";
+import ThemeSwitcher from "./components/layouts/ThemeSwitcher";
 import useThemeMode from "./hooks/useThemeMode";
 
 export default function App() {

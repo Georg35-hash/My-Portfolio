@@ -3,13 +3,13 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import RecentNews from "../../src/components/News/RecentNews";
 import AllNews from "../../src/components/News/AllNews";
 import PostPage from "../pages/PostPage";
-import NavTabs from "../components/layout/NavTabs";
+import NavTabs from "./layouts/NavTabs.jsx";
 import AboutMe from "./AboutMe";
 import MySkills from "./MySkills";
 import ContactForm from "../pages/ContactForm";
 import { NewsContextProvider } from "../context/NewsContextProvider";
 import NotFound from "../../src/pages/NotFound.jsx";
-import ProjectList from "./Projects/ProjectList.jsx";
+import ProjectList from "./projects/ProjectList.jsx";
 
 export default function Main() {
   const location = useLocation();
