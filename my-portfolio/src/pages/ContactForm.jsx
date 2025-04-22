@@ -1,6 +1,6 @@
 import { Box, Button, TextField, Typography, Paper } from "@mui/material";
 import { useForm } from "react-hook-form";
-import Notification from "../components/layouts/Notifications";
+import Notification from "../components/layout/Notifications";
 import { useState } from "react";
 export default function ContactForm() {
   const [notificationOpen, setNotificationOpen] = useState(false);

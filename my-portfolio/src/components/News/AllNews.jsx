@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import { usePosts } from "../../context/NewsContextProvider";
 import PostCard from "./PostCard";
 
-const AllNews = () => {
+export default function AllNews() {
   const { allPosts } = usePosts();
 
   return (
@@ -19,6 +19,4 @@ const AllNews = () => {
       ))}
     </Box>
   );
-};
-
-export default AllNews;
+}
