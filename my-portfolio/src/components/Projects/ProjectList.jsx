@@ -1,7 +1,13 @@
 import Project from "./Project";
 import { Box, Typography } from "@mui/material";
+import { motion } from "framer-motion";
 import bedLinenShop from "../../assets/myprojects/bed-linen-shop.png";
 import petShop from "../../assets/myprojects/pet-shop.png";
+
+import {
+  containerVariants,
+  itemVariants,
+} from "../../shared/animations/motionVariants";
 
 const projectsList = [
   {
@@ -21,16 +27,25 @@ const projectsList = [
     liveDemoLink: "https://pet-shop-react-ebon.vercel.app/",
   },
 ];
+
 export default function ProjectList() {
   return (
-    <Box sx={{ display: "block", margin: "20px 0 20px 0" }} component="section">
-      <Typography
-        variant="h3"
-        fontFamily="Roboto"
-        sx={{ textAlign: "center", marginBottom: { xs: 3, sm: 4, md: 5 } }}
-      >
-        My Projects
-      </Typography>
+    <Box
+      sx={{ display: "block", margin: "20px 0 20px 0" }}
+      component={motion.section}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.div variants={itemVariants}>
+        <Typography
+          variant="h3"
+          fontFamily="Roboto"
+          sx={{ textAlign: "center", marginBottom: { xs: 3, sm: 4, md: 5 } }}
+        >
+          My Projects
+        </Typography>
+      </motion.div>
 
       <Box
         sx={{
@@ -42,14 +57,15 @@ export default function ProjectList() {
         }}
       >
         {projectsList.map((project) => (
-          <Project
-            key={project.id}
-            project={{
-              ...project, // Sprea operator to include all properties
-              githubLink: project.githubLink,
-              liveDemoLink: project.liveDemoLink,
-            }}
-          />
+          <motion.div key={project.id} variants={itemVariants}>
+            <Project
+              project={{
+                ...project,
+                githubLink: project.githubLink,
+                liveDemoLink: project.liveDemoLink,
+              }}
+            />
+          </motion.div>
         ))}
       </Box>
     </Box>
