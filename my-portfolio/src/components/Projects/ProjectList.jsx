@@ -3,7 +3,6 @@ import { Box, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import bedLinenShop from "../../assets/myprojects/bed-linen-shop.png";
 import petShop from "../../assets/myprojects/pet-shop.png";
-
 import {
   containerVariants,
   itemVariants,

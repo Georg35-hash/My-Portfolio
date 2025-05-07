@@ -26,14 +26,18 @@ export default function NavBar({ children }) {
   const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
 
   return (
+   
     <AppBar position="sticky" sx={{ background: "#ED5F44", height: "64px" }}>
+       <div style={{margin:'0 auto', maxWidth:'750px', width:'100%'}}>
       <Toolbar
         sx={{
           display: "flex",
           justifyContent: "space-between",
           height: "100%",
+          
         }}
       >
+        
         <IconButton
           color="inherit"
           onClick={handleDrawerToggle}
@@ -78,6 +82,8 @@ export default function NavBar({ children }) {
           ))}
         </List>
       </Drawer>
+      </div>
     </AppBar>
+    
   );
 }

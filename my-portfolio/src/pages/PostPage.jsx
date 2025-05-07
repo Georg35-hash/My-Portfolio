@@ -18,7 +18,7 @@ export default function PostPage() {
   if (!post) return <Typography variant="h6">Post not found</Typography>;
 
   return (
-    <Box sx={{ maxWidth: 800, margin: "0 0 20px 0" }}>
+    <Box sx={{ m: "0 0 20px 0", maxWidth:'750px', margin: "0 auto" }}>
       <Paper sx={{ p: 3 }}>
         <Card
           sx={{ display: "flex", flexDirection: "column", marginBottom: 3 }}

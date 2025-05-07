@@ -95,7 +95,7 @@ export default function AboutMe() {
         gap: 4,
       }}
     >
-      <motion.div variants={itemVariants} style={{ flex: 1 }}>
+      <motion.div variants={itemVariants}>
         <Box
           sx={{
             display: "flex",

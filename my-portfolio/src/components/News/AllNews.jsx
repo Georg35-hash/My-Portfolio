@@ -6,7 +6,7 @@ export default function AllNews() {
   const { allPosts } = usePosts();
 
   return (
-    <Box sx={{ p: 2 }}>
+    <Box sx={{ p: 2, margin:'0 auto', maxWidth:'750px' }}>
       <Typography
         variant="h4"
         gutterBottom

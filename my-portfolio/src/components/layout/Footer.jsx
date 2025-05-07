@@ -33,7 +33,7 @@ export default function Footer() {
     <Box component="footer">
       <Card variant="outlined" sx={{ mt: 4 }}>
         <CardContent>
-          <form onSubmit={handleSubmit(onSubmit)}>
+          <form onSubmit={handleSubmit(onSubmit)} style={{margin:'0 auto', maxWidth:'750px', width:'100%'}}>
             <Box
               display="flex"
               flexDirection={{ xs: "column", sm: "row" }}
@@ -96,7 +96,7 @@ export default function Footer() {
                   color="text.secondary"
                   textAlign="center"
                 >
-                  We care about your security.{" "}
+                  We care about your security.
                   <Link to="/privacy-policy" style={{ textDecoration: "none" }}>
                     <Box
                       component="span"
@@ -119,9 +119,13 @@ export default function Footer() {
       </Card>
       <Box
         sx={{
-          display: "flex ",
+          display: "flex",
           justifyContent: "space-between",
-          m: "10px 10px 0px 10px",
+          p: "20px 10px 0px 10px",
+          margin: "0 auto",
+          maxWidth: "750px",
+          width: "100%",
+          alignItems: "center"
         }}
       >
         <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
