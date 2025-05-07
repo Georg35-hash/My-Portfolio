@@ -3,8 +3,8 @@
       { "source": "/contact", "destination": "/index.html" },
       { "source": "/projects", "destination": "/index.html" },
       { "source": "/all", "destination": "/index.html" },
-      { "source": "/posts/:id", "destination": "/index.html" },
-      { "source": "/(.*)", "destination": "/index.html" }
+      { "source": "/(.*)", "destination": "/index.html" },
+      { "source": "/posts/:id", "destination": "/index.html" }
     ]
   }
   
