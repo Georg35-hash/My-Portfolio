@@ -27,7 +27,7 @@ export default function Main() {
     isPostPage || hiddenTabsPaths.includes(location.pathname) || is404;
 
   return (
-    <Box component="main" sx={{ maxHeight:"1000px"}}>
+    <Box component="main" >
       {!hideNavTabs && <NavTabs />}
 
       <Routes>
