@@ -13,7 +13,7 @@ const projectsList = [
     id: 1,
     title: "Bed Linen Shop",
     image: bedLinenShop,
-    desc: "Online store for bed linen products. This project includes HTML&&SCSS and JS, vite as package manager",
+    desc: "Online store for bed linen products. This project includes HTML&&SCSS and JS, vite as build tool",
     githubLink: "https://github.com/Georg35-hash/bed-linen-shop1",
     liveDemoLink: "https://bed-linen-shop1.vercel.app/",
   },
