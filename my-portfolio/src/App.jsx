@@ -15,7 +15,6 @@ export default function App() {
       <Main />
       <Footer />
       <CssBaseline />
-    
     </ThemeProvider>
   );
 }

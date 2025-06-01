@@ -1,5 +1,4 @@
-import React from "react";
-import { Snackbar, Alert } from "@mui/material";
+import { Snackbar, Alert } from '@mui/material';
 
 export default function Notifications({ open, onClose, message, severity }) {
   return (
@@ -7,15 +6,15 @@ export default function Notifications({ open, onClose, message, severity }) {
       open={open}
       autoHideDuration={4000}
       onClose={onClose}
-      anchorOrigin={{ vertical: "top", horizontal: "right" }}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
       sx={{
-        position: "fixed",
+        position: 'fixed',
         right: 20,
         top: 20,
         zIndex: 10000,
       }}
     >
-      <Alert onClose={onClose} severity={severity} sx={{ width: "100%" }}>
+      <Alert onClose={onClose} severity={severity} sx={{ width: '100%' }}>
         {message}
       </Alert>
     </Snackbar>
