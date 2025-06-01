@@ -1,12 +1,14 @@
-import { Box, Button, TextField, Typography, Paper } from "@mui/material";
-import { useForm } from "react-hook-form";
-import Notification from "../components/layout/Notifications";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { Box, TextField, Typography, Paper } from '@mui/material';
+import { useForm } from 'react-hook-form';
+import Notification from '../components/layout/Notifications';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import emailjs from 'emailjs-com';
 import {
   containerVariants,
   itemVariants,
-} from "../shared/animations/motionVariants";
+} from '../shared/animations/motionVariants';
+import ButtonEmail from '../components/layout/nodemailer/ButtonEmail';
 
 export default function ContactForm() {
   const [notificationOpen, setNotificationOpen] = useState(false);
@@ -14,20 +16,40 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
+    setError,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-    setNotificationOpen(true);
+  const onSubmit = async data => {
+    try {
+      await emailjs.send(
+        'service_rsi6x48',
+        'template_y9b1o3r',
+        {
+          user_email: data.email,
+          user_name: data.name,
+          user_message: data.message,
+        },
+        'DHocbzH561cuvoxch',
+      );
+      setNotificationOpen(true);
+      reset();
+    } catch (err) {
+      console.error('Email sending failed:', err);
+      setError('email', {
+        type: 'manual',
+        message: 'Failed to send your message. Please try again later.',
+      });
+    }
   };
 
   return (
     <Box
       sx={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
         p: 2,
       }}
     >
@@ -35,7 +57,7 @@ export default function ContactForm() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        style={{ width: "100%", maxWidth: 500 }}
+        style={{ width: '100%', maxWidth: 500 }}
       >
         <Paper elevation={3} sx={{ p: 4 }}>
           <motion.div variants={itemVariants}>
@@ -54,7 +76,7 @@ export default function ContactForm() {
               <TextField
                 fullWidth
                 label="Name"
-                {...register("name", { required: "Name is required" })}
+                {...register('name', { required: 'Name is required' })}
                 margin="normal"
                 error={!!errors.name}
                 helperText={errors.name?.message}
@@ -66,11 +88,11 @@ export default function ContactForm() {
                 fullWidth
                 label="Email"
                 type="email"
-                {...register("email", {
-                  required: "Email is required",
+                {...register('email', {
+                  required: 'Email is required',
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                    message: "Invalid email format",
+                    message: 'Invalid email format',
                   },
                 })}
                 margin="normal"
@@ -85,7 +107,7 @@ export default function ContactForm() {
                 label="Message"
                 multiline
                 rows={4}
-                {...register("message", { required: "Message is required" })}
+                {...register('message', { required: 'Message is required' })}
                 margin="normal"
                 error={!!errors.message}
                 helperText={errors.message?.message}
@@ -93,14 +115,7 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <Button
-                type="submit"
-                variant="contained"
-                fullWidth
-                sx={{ mt: 2, backgroundColor: "#ED5F44" }}
-              >
-                Send
-              </Button>
+              <ButtonEmail initialText="Send" clickedText="One Moment..." />
             </motion.div>
           </Box>
         </Paper>
@@ -108,7 +123,7 @@ export default function ContactForm() {
 
       <Notification
         open={notificationOpen}
-        message={"Message sent successfully!"}
+        message={'Message sent successfully!'}
         severity="success"
         onClose={() => setNotificationOpen(false)}
       />

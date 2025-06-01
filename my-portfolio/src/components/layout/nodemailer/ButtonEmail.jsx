@@ -1,7 +1,10 @@
 import { Button } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
+import { useState } from 'react';
 
-export default function ButtonEmail() {
+export default function ButtonEmail({ initialText }) {
+  const [text, setText] = useState(initialText);
+
   return (
     <Button
       type="submit"
@@ -15,7 +18,7 @@ export default function ButtonEmail() {
         },
       }}
     >
-      Subscribe
+      {text}
     </Button>
   );
 }

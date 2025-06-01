@@ -33,7 +33,6 @@ export default function Footer() {
         'template_0s8o3xg',
         {
           user_email: data.email,
-          reply_to: data.email,
         },
         'DHocbzH561cuvoxch',
       );
@@ -97,7 +96,10 @@ export default function Footer() {
                     {errors.email.message}
                   </Typography>
                 )}
-                <ButtonEmail />
+                <ButtonEmail
+                  initialText="Subscribe"
+                  clickedText="One Moment..."
+                />
                 <Typography
                   variant="caption"
                   color="text.secondary"
