@@ -96,10 +96,7 @@ export default function Footer() {
                     {errors.email.message}
                   </Typography>
                 )}
-                <ButtonEmail
-                  initialText="Subscribe"
-                  clickedText="One Moment..."
-                />
+                <ButtonEmail initialText="Subscribe" />
                 <Typography
                   variant="caption"
                   color="text.secondary"
