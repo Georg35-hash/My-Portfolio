@@ -115,7 +115,7 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <ButtonEmail initialText="Send" clickedText="One Moment..." />
+              <ButtonEmail initialText="Send" />
             </motion.div>
           </Box>
         </Paper>
