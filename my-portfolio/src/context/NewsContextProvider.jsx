@@ -1,8 +1,33 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext } from 'react';
 
 const posts = [
   {
     id: 1,
+    title: 'May 2025 (version 1.101)',
+    content: `
+     Welcome to the May 2025 release of Visual Studio Code. There are many updates in this version that we hope you'll like, some of the key highlights include:
+
+MCP
+
+Expand your agent coding flow with support for prompts, resources, and sampling.
+Access MCP servers that require authentication.
+Debug MCP servers with development mode.
+Publish MCP servers from an extension.
+Chat
+
+Group and manage related tools by combining them in a tool set .
+Source Control
+
+View files in Source Control Graph view.
+Assign and track work for GitHub Copilot Coding Agent from within VS Code.
+    `,
+    recent: true,
+    image:
+      'https://www.jrebel.com/sites/default/files/image/2022-11/blog-jrebel-what-is-visual-studio-code.png',
+    time: '2025-06-19T10:00:00Z',
+  },
+  {
+    id: 2,
     title: "React 19: What's New?",
     content: `
       React 19 introduces several new features and performance improvements that make building modern web applications easier and more efficient. This version focuses on enhancing the developer experience with better error handling, improved rendering strategies, and a more intuitive API. Key highlights include improved support for concurrent rendering, React Server components, and updates to hooks that simplify state management.
@@ -12,12 +37,12 @@ const posts = [
       React's team also worked on making it easier to work with TypeScript, improving the type safety of the framework.
     `,
     recent: true,
-    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
-    time: "2025-04-05T12:00:00Z",
+    image: 'https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg',
+    time: '2025-04-05T12:00:00Z',
   },
   {
-    id: 2,
-    title: "JavaScript ESNext: New Features You Need to Know",
+    id: 3,
+    title: 'JavaScript ESNext: New Features You Need to Know',
     content: `
       JavaScript ESNext brings an array of new features that allow developers to write more concise, readable, and efficient code. In this post, we explore the new syntax introduced in the latest ECMAScript version, including top-level await, private class fields, and logical assignment operators.
       
@@ -29,12 +54,13 @@ const posts = [
     `,
     recent: true,
     image:
-      "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
-    time: "2025-04-05T14:00:00Z",
+      'https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png',
+    time: '2025-04-05T14:00:00Z',
   },
+
   {
-    id: 3,
-    title: "Understanding MUI: A Comprehensive Guide",
+    id: 4,
+    title: 'Understanding MUI: A Comprehensive Guide',
     content: `
       Material-UI (MUI) is one of the most popular React UI libraries, providing a comprehensive set of customizable components for building beautiful and responsive user interfaces. In this post, we dive deep into how MUI works, how to customize its theme, and how to integrate it into your React projects.
       
@@ -48,12 +74,12 @@ const posts = [
       With its powerful theming and customization options, MUI is a must-have tool for React developers who want to create polished, accessible, and user-friendly interfaces.
     `,
     recent: false,
-    image: "https://mui.com/static/logo.svg",
-    time: "2025-04-03T09:00:00Z",
+    image: 'https://mui.com/static/logo.svg',
+    time: '2025-04-03T09:00:00Z',
   },
   {
-    id: 4,
-    title: "Mastering State Management in React: From useState to Redux",
+    id: 5,
+    title: 'Mastering State Management in React: From useState to Redux',
     content: `
       Managing state in React applications is crucial for building interactive UIs. In this post, we explore the different tools and strategies available for state management, from React's built-in useState hook to more complex solutions like Redux.
       
@@ -65,12 +91,12 @@ const posts = [
     `,
     recent: false,
     image:
-      "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png",
-    time: "2025-04-02T16:00:00Z",
+      'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png',
+    time: '2025-04-02T16:00:00Z',
   },
   {
-    id: 5,
-    title: "Advanced JavaScript: Understanding Closures",
+    id: 6,
+    title: 'Advanced JavaScript: Understanding Closures',
     content: `
       Closures are one of the most powerful features of JavaScript, yet they often confuse new developers. In this post, we break down closures and show you how they can be used to create more efficient and modular code.
       
@@ -86,8 +112,8 @@ const posts = [
     `,
     recent: false,
     image:
-      "https://miro.medium.com/v2/resize:fit:1400/1*AJWhia2_QH77RYEWhsLsWA.jpeg",
-    time: "2025-04-01T10:00:00Z",
+      'https://miro.medium.com/v2/resize:fit:1400/1*AJWhia2_QH77RYEWhsLsWA.jpeg',
+    time: '2025-04-01T10:00:00Z',
   },
 ];
 
@@ -95,7 +121,7 @@ export const NewsContext = createContext();
 export const usePosts = () => useContext(NewsContext);
 
 export const NewsContextProvider = ({ children }) => {
-  const recentPosts = posts.filter((post) => post.recent);
+  const recentPosts = posts.filter(post => post.recent);
   const allPosts = posts;
   const currPost = posts;
   return (

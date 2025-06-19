@@ -1,4 +1,4 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link } from 'react-router-dom';
 import {
   Box,
   Typography,
@@ -7,21 +7,21 @@ import {
   Card,
   CardMedia,
   CardContent,
-} from "@mui/material";
-import { usePosts } from "../context/NewsContextProvider";
+} from '@mui/material';
+import { usePosts } from '../context/NewsContextProvider';
 
 export default function PostPage() {
   const { id } = useParams();
   const { allPosts } = usePosts();
-  const post = allPosts.find((p) => p.id === parseInt(id));
+  const post = allPosts.find(p => p.id === parseInt(id));
 
   if (!post) return <Typography variant="h6">Post not found</Typography>;
 
   return (
-    <Box sx={{ m: "0 0 20px 0", maxWidth:'750px', margin: "0 auto" }}>
+    <Box sx={{ m: '0 0 20px 0', maxWidth: '750px', margin: '0 auto' }}>
       <Paper sx={{ p: 3 }}>
         <Card
-          sx={{ display: "flex", flexDirection: "column", marginBottom: 3 }}
+          sx={{ display: 'flex', flexDirection: 'column', marginBottom: 3 }}
         >
           <CardMedia
             component="img"
@@ -30,7 +30,7 @@ export default function PostPage() {
             image={post.image}
             alt={post.title}
             sx={{
-              objectFit: "contain",
+              objectFit: 'contain',
             }}
           />
           <CardContent>
@@ -38,8 +38,8 @@ export default function PostPage() {
               variant="h4"
               gutterBottom
               sx={{
-                fontWeight: "bold",
-                color: (theme) => theme.palette.secondary.main,
+                fontWeight: 'bold',
+                color: theme => theme.palette.secondary.main,
               }}
             >
               {post.title}
@@ -47,14 +47,14 @@ export default function PostPage() {
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ fontStyle: "italic", mb: 2 }}
+              sx={{ fontStyle: 'italic', mb: 2 }}
             >
               {new Date(post.time).toLocaleString()}
             </Typography>
             <Typography
               variant="body1"
               paragraph
-              sx={{ lineHeight: 1.6, fontSize: "1.1rem" }}
+              sx={{ lineHeight: 1.6, fontSize: '1.1rem' }}
             >
               {post.content}
             </Typography>
@@ -67,7 +67,7 @@ export default function PostPage() {
           variant="contained"
           sx={{
             mt: 3,
-            backgroundColor: (theme) => theme.palette.customColor.main,
+            backgroundColor: theme => theme.palette.customColor.main,
           }}
         >
           Back to Recent News
