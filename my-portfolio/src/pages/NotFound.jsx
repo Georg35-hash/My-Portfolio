@@ -1,35 +1,33 @@
-import React from "react";
-import { Typography, Button, Container } from "@mui/material";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { Typography, Button, Container } from '@mui/material';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import {
   containerVariants,
   itemVariants,
-} from "../shared/animations/motionVariants";
+} from '../shared/animations/motionVariants';
 
 export default function NotFound() {
   return (
     <Container
-      maxWidth="sm"
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        m: "50px 0",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        textAlign: 'center',
+        marginTop: 10,
       }}
     >
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
       >
         <motion.div variants={itemVariants}>
           <Typography
             variant="h1"
-            sx={{ fontSize: "6rem", fontWeight: "bold", color: "#ED5F44" }}
+            sx={{ fontSize: '6rem', fontWeight: 'bold', color: '#ED5F44' }}
           >
             404
           </Typography>
@@ -47,11 +45,11 @@ export default function NotFound() {
             to="/"
             variant="contained"
             sx={{
-              backgroundColor: "#ED5F44",
-              color: "#fff",
-              padding: "10px 20px",
-              "&:hover": {
-                backgroundColor: "#c44f3b",
+              backgroundColor: '#ED5F44',
+              color: '#fff',
+              padding: '10px 20px',
+              '&:hover': {
+                backgroundColor: '#c44f3b',
               },
             }}
           >

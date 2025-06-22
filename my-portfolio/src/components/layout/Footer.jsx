@@ -14,8 +14,30 @@ import gitHub from '../../assets/footer/git-hub.svg';
 import instagram from '../../assets/footer/instagram.svg';
 import linkedIn from '../../assets/footer/linked-in.svg';
 import ButtonEmail from './nodemailer/ButtonEmail';
+import { usePosts } from '../../context/NewsContextProvider';
+import { sentensesByLanguage } from '../../context/translation';
 
 export default function Footer() {
+  const { language } = usePosts();
+
+  const footerSub =
+    sentensesByLanguage[language]?.[3]?.footerSub ||
+    sentensesByLanguage.en[3].footerSub;
+  const footerUp =
+    sentensesByLanguage[language]?.[4]?.footerUp ||
+    sentensesByLanguage.en[4].footerUp;
+  const footerPolicy =
+    sentensesByLanguage[language]?.[5]?.footerPolicy ||
+    sentensesByLanguage.en[5].footerPolicy;
+  const footerRightsURLL =
+    sentensesByLanguage[language]?.[6]?.footerRightsURL ||
+    sentensesByLanguage.en[6].footerRightsURL;
+  const footerRights =
+    sentensesByLanguage[language]?.[7]?.footerRights ||
+    sentensesByLanguage.en[7].footerRights;
+
+  const subscribeButtonText = language === 'de' ? 'Abonnieren' : 'Subscribe';
+
   const [notificationOpen, setNotificationOpen] = useState(false);
 
   const {
@@ -42,7 +64,10 @@ export default function Footer() {
       console.error('Email sending failed:', err);
       setError('email', {
         type: 'manual',
-        message: 'Failed to subscribe. Please try again later.',
+        message:
+          language === 'de'
+            ? 'Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut.'
+            : 'Failed to subscribe. Please try again later.',
       });
     }
   };
@@ -64,10 +89,10 @@ export default function Footer() {
             >
               <Box textAlign={{ xs: 'center', sm: 'left' }}>
                 <Typography variant="h6" gutterBottom>
-                  Subscribe to my updates
+                  {footerSub}
                 </Typography>
                 <Typography color="text.secondary" maxWidth={300}>
-                  Get the latest news about my projects and updates.
+                  {footerUp}
                 </Typography>
               </Box>
 
@@ -80,13 +105,23 @@ export default function Footer() {
               >
                 <OutlinedInput
                   autoComplete="email"
-                  placeholder="Enter your email"
+                  placeholder={
+                    language === 'de'
+                      ? 'Geben Sie Ihre E-Mail ein'
+                      : 'Enter your email'
+                  }
                   fullWidth
                   {...register('email', {
-                    required: 'Email is required',
+                    required:
+                      language === 'de'
+                        ? 'E-Mail ist erforderlich'
+                        : 'Email is required',
                     pattern: {
                       value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                      message: 'Invalid email format',
+                      message:
+                        language === 'de'
+                          ? 'Ungültiges E-Mail-Format'
+                          : 'Invalid email format',
                     },
                   })}
                   error={!!errors.email}
@@ -96,13 +131,13 @@ export default function Footer() {
                     {errors.email.message}
                   </Typography>
                 )}
-                <ButtonEmail initialText="Subscribe" />
+                <ButtonEmail initialText={subscribeButtonText} />
                 <Typography
                   variant="caption"
                   color="text.secondary"
                   textAlign="center"
                 >
-                  We care about your security.{' '}
+                  {footerPolicy}
                   <Link to="/privacy-policy" style={{ textDecoration: 'none' }}>
                     <Box
                       component="span"
@@ -114,7 +149,7 @@ export default function Footer() {
                         },
                       }}
                     >
-                      Read our privacy policy.
+                      {footerRightsURLL}
                     </Box>
                   </Link>
                 </Typography>
@@ -135,7 +170,7 @@ export default function Footer() {
           alignItems: 'center',
         }}
       >
-        <Typography>© 2025 Heorhii Vasyliev All rights reserved.</Typography>
+        <Typography> {footerRights}</Typography>
         <Box
           sx={{
             display: 'flex',
@@ -184,7 +219,11 @@ export default function Footer() {
 
       <Notifications
         open={notificationOpen}
-        message="Subscription successful!"
+        message={
+          language === 'de'
+            ? 'Abonnement erfolgreich!'
+            : 'Subscription successful!'
+        }
         severity="success"
         onClose={() => setNotificationOpen(false)}
       />

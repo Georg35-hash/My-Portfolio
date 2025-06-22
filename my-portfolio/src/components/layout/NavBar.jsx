@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { usePosts } from '../../context/NewsContextProvider';
 import {
   AppBar,
   Box,
@@ -9,81 +10,91 @@ import {
   ListItemButton,
   Toolbar,
   Button,
-} from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Link } from "react-router-dom";
-
-const navItems = [
-  { label: "Home", path: "/" },
-  { label: "Blog", path: "/recent" },
-  { label: "Projects", path: "/projects" },
-  { label: "Contact", path: "/contact" },
-];
+  Select,
+  MenuItem,
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
+import { translations } from '../../context/translation';
 
 export default function NavBar({ children }) {
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { language, changeLanguage } = usePosts();
 
-  const handleDrawerToggle = () => setMobileOpen((prev) => !prev);
+  const handleDrawerToggle = () => setMobileOpen(prev => !prev);
+
+  const navItems = [
+    { label: translations[language].home, path: '/' },
+    { label: translations[language].blog, path: '/recent' },
+    { label: translations[language].projects, path: '/projects' },
+    { label: translations[language].contact, path: '/contact' },
+  ];
 
   return (
-   
-    <AppBar position="sticky" sx={{ background: "#ED5F44", height: "64px" }}>
-       <div style={{margin:'0 auto', maxWidth:'750px', width:'100%'}}>
-      <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          height: "100%",
-          
-        }}
-      >
-        
-        <IconButton
-          color="inherit"
-          onClick={handleDrawerToggle}
-          sx={{ display: { sm: "none" } }}
+    <AppBar position="sticky" sx={{ background: '#ED5F44', height: '64px' }}>
+      <div style={{ margin: '0 auto', maxWidth: '750px', width: '100%' }}>
+        <Toolbar
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            height: '100%',
+          }}
         >
-          <MenuIcon />
-        </IconButton>
+          <IconButton
+            color="inherit"
+            onClick={handleDrawerToggle}
+            sx={{ display: { sm: 'none' } }}
+          >
+            <MenuIcon />
+          </IconButton>
 
-        <Box sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}>
-          {navItems.map((item) => (
-            <Button
-              key={item.label}
-              component={Link}
-              to={item.path}
-              sx={{ color: "#fff", padding: "8px 16px" }}
-            >
-              {item.label}
-            </Button>
-          ))}
-        </Box>
-
-        {children}
-      </Toolbar>
-
-      <Drawer
-        variant="temporary"
-        open={mobileOpen}
-        onClose={handleDrawerToggle}
-        sx={{ "& .MuiDrawer-paper": { width: 240 } }}
-      >
-        <List>
-          {navItems.map((item) => (
-            <ListItem key={item.label} disablePadding>
-              <ListItemButton
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
+            {navItems.map(item => (
+              <Button
+                key={item.label}
                 component={Link}
                 to={item.path}
-                onClick={handleDrawerToggle}
+                sx={{ color: '#fff', padding: '8px 16px' }}
               >
                 {item.label}
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+              </Button>
+            ))}
+          </Box>
+
+          {children}
+          <Select
+            variant="standard"
+            labelId="select"
+            id="select"
+            value={language}
+            onChange={e => changeLanguage(e.target.value)}
+          >
+            <MenuItem value="de">{translations[language].languageDe}</MenuItem>
+            <MenuItem value="en">{translations[language].languageEn}</MenuItem>
+          </Select>
+        </Toolbar>
+
+        <Drawer
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          sx={{ '& .MuiDrawer-paper': { width: 240 } }}
+        >
+          <List>
+            {navItems.map(item => (
+              <ListItem key={item.label} disablePadding>
+                <ListItemButton
+                  component={Link}
+                  to={item.path}
+                  onClick={handleDrawerToggle}
+                >
+                  {item.label}
+                </ListItemButton>
+              </ListItem>
+            ))}
+          </List>
+        </Drawer>
       </div>
     </AppBar>
-    
   );
 }

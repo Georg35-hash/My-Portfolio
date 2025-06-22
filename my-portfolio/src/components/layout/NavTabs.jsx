@@ -1,10 +1,10 @@
-import { AppBar, Tab, Tabs } from "@mui/material";
-import { Link, useLocation } from "react-router";
+import { AppBar, Tab, Tabs } from '@mui/material';
+import { Link, useLocation } from 'react-router';
 
 export default function NavTabs() {
   const location = useLocation();
 
-  const currentTab = location.pathname === "/all" ? 1 : 0;
+  const currentTab = location.pathname === '/all' ? 1 : 0;
 
   return (
     <AppBar

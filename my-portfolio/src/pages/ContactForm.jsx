@@ -9,8 +9,13 @@ import {
   itemVariants,
 } from '../shared/animations/motionVariants';
 import ButtonEmail from '../components/layout/nodemailer/ButtonEmail';
+import { usePosts } from '../context/NewsContextProvider';
+import { contactForm } from '../context/translation';
 
 export default function ContactForm() {
+  const { language } = usePosts();
+  const contact = contactForm[language] || contactForm.en;
+
   const [notificationOpen, setNotificationOpen] = useState(false);
 
   const {
@@ -67,7 +72,7 @@ export default function ContactForm() {
               gutterBottom
               fontFamily="Roboto"
             >
-              Contact Me
+              {contact.contactTitle}
             </Typography>
           </motion.div>
 
@@ -75,8 +80,9 @@ export default function ContactForm() {
             <motion.div variants={itemVariants}>
               <TextField
                 fullWidth
-                label="Name"
-                {...register('name', { required: 'Name is required' })}
+                label={contact.name.label}
+                placeholder={contact.name.placeholder}
+                {...register('name', { required: contact.name.errorRequired })}
                 margin="normal"
                 error={!!errors.name}
                 helperText={errors.name?.message}
@@ -86,13 +92,14 @@ export default function ContactForm() {
             <motion.div variants={itemVariants}>
               <TextField
                 fullWidth
-                label="Email"
+                label={contact.email.label}
+                placeholder={contact.email.placeholder}
                 type="email"
                 {...register('email', {
-                  required: 'Email is required',
+                  required: contact.email.errorRequired,
                   pattern: {
                     value: /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/,
-                    message: 'Invalid email format',
+                    message: contact.email.errorPattern,
                   },
                 })}
                 margin="normal"
@@ -104,10 +111,13 @@ export default function ContactForm() {
             <motion.div variants={itemVariants}>
               <TextField
                 fullWidth
-                label="Message"
+                label={contact.message.label}
+                placeholder={contact.message.placeholder}
                 multiline
                 rows={4}
-                {...register('message', { required: 'Message is required' })}
+                {...register('message', {
+                  required: contact.message.errorRequired,
+                })}
                 margin="normal"
                 error={!!errors.message}
                 helperText={errors.message?.message}
@@ -115,7 +125,7 @@ export default function ContactForm() {
             </motion.div>
 
             <motion.div variants={itemVariants}>
-              <ButtonEmail initialText="Send" />
+              <ButtonEmail initialText={contact.sendButton} />
             </motion.div>
           </Box>
         </Paper>
@@ -123,7 +133,7 @@ export default function ContactForm() {
 
       <Notification
         open={notificationOpen}
-        message={'Message sent successfully!'}
+        message={contact.successMessage}
         severity="success"
         onClose={() => setNotificationOpen(false)}
       />

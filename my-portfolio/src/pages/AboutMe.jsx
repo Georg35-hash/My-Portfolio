@@ -1,14 +1,16 @@
-import { Box, Typography, Button, Avatar } from "@mui/material";
-import { motion } from "framer-motion";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import myPhoto from "../assets/image/photo.jpg";
-import { useEffect, useState } from "react";
+import { Box, Typography, Button, Avatar } from '@mui/material';
+import { motion } from 'framer-motion';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import myPhoto from '../assets/image/photo.jpg';
+import { useEffect, useState } from 'react';
+import { usePosts } from '../context/NewsContextProvider';
 
 import {
   containerVariants,
   itemVariants,
-} from "../shared/animations/motionVariants";
+} from '../shared/animations/motionVariants';
+import { sentensesByLanguage } from '../context/translation';
 
 const TypingEffect = ({
   staticText,
@@ -26,7 +28,7 @@ const TypingEffect = ({
 
     const interval = setInterval(
       () => {
-        setVisibleLength((prev) => {
+        setVisibleLength(prev => {
           if (!isDeleting) {
             if (prev < animatedText.length) return prev + 1;
 
@@ -45,7 +47,7 @@ const TypingEffect = ({
           }
         });
       },
-      isDeleting ? 50 : 100
+      isDeleting ? 50 : 100,
     );
 
     return () => clearInterval(interval);
@@ -54,10 +56,10 @@ const TypingEffect = ({
   return (
     <Box
       sx={{
-        display: "inline-flex",
-        fontSize: { xs: "20px", sm: "24px", md: "26px" },
-        fontWeight: "bold",
-        fontFamily: "monospace",
+        display: 'inline-flex',
+        fontSize: { xs: '20px', sm: '24px', md: '26px' },
+        fontWeight: 'bold',
+        fontFamily: 'monospace',
         minWidth: `${staticText.length + animatedText.length}ch`,
       }}
     >
@@ -79,6 +81,11 @@ const TypingEffect = ({
 };
 
 export default function AboutMe() {
+  const { language } = usePosts();
+
+  const aboutMeText =
+    sentensesByLanguage[language]?.[0]?.aboutMe ||
+    sentensesByLanguage.en[0].aboutMe;
   return (
     <Box
       component={motion.section}
@@ -86,21 +93,21 @@ export default function AboutMe() {
       initial="hidden"
       animate="visible"
       sx={{
-        marginTop: "50px",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: { xs: "column", md: "row" },
-        flexWrap: "wrap",
+        marginTop: '50px',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: { xs: 'column', md: 'row' },
+        flexWrap: 'wrap',
         gap: 4,
       }}
     >
       <motion.div variants={itemVariants}>
         <Box
           sx={{
-            display: "flex",
+            display: 'flex',
             gap: 1,
-            justifyContent: { xs: "center", md: "flex-start" },
+            justifyContent: { xs: 'center', md: 'flex-start' },
           }}
         >
           <TypingEffect
@@ -112,49 +119,48 @@ export default function AboutMe() {
           />
         </Box>
 
-        <Box sx={{ display: "flex", justifyContent: "center" }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Typography
             component="p"
             sx={{
               maxWidth: { xs: 300, sm: 360, md: 480 },
               marginTop: 2,
-              fontSize: { xs: "14px", sm: "16px", md: "20px" },
-              textAlign: { xs: "center", md: "left" },
+              fontSize: { xs: '14px', sm: '16px', md: '20px' },
+              textAlign: { xs: 'center', md: 'left' },
             }}
           >
-            I'm a Web Developer and IT Specialist focused on learning new
-            technologies and sharing knowledge with others.
+            {aboutMeText}
           </Typography>
         </Box>
 
         <Box
-          sx={{ marginTop: "20px", textAlign: { xs: "center", md: "left" } }}
+          sx={{ marginTop: '20px', textAlign: { xs: 'center', md: 'left' } }}
         >
           <motion.div variants={itemVariants}>
             <a
               href="https://app.cal.com/heorhii"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
+              style={{ textDecoration: 'none' }}
             >
               <Button
                 variant="outlined"
                 startIcon={<CalendarMonthIcon />}
                 endIcon={<ArrowForwardIosIcon />}
                 sx={{
-                  borderRadius: "24px",
-                  textTransform: "none",
-                  fontSize: "16px",
-                  fontWeight: "bold",
-                  padding: "10px 20px",
-                  color: "#ff7300",
-                  borderColor: "#ff7300",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    backgroundColor: "#ff7300",
-                    color: "#fff",
-                    borderColor: "#ff7300",
-                    boxShadow: "0px 4px 15px rgba(255, 115, 0, 0.4)",
+                  borderRadius: '24px',
+                  textTransform: 'none',
+                  fontSize: '16px',
+                  fontWeight: 'bold',
+                  padding: '10px 20px',
+                  color: '#ff7300',
+                  borderColor: '#ff7300',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    backgroundColor: '#ff7300',
+                    color: '#fff',
+                    borderColor: '#ff7300',
+                    boxShadow: '0px 4px 15px rgba(255, 115, 0, 0.4)',
                   },
                 }}
               >
