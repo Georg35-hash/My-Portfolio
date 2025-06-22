@@ -21,6 +21,7 @@ export default function ThemeSwitcher({ darkMode, toggleDarkMode }) {
         ':hover': {
           boxShadow: '0 4px 20px rgba(0, 0, 0, 0.3)',
         },
+        marginRight: 1,
       }}
     >
       <Box
