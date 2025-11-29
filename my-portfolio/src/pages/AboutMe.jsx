@@ -5,7 +5,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import myPhoto from '../assets/image/photo.jpg';
 import { useEffect, useState } from 'react';
 import { usePosts } from '../context/NewsContextProvider';
-
+import { translations } from '../context/translation';
 import {
   containerVariants,
   itemVariants,
@@ -164,7 +164,7 @@ export default function AboutMe() {
                   },
                 }}
               >
-                Schedule a call
+                <Typography>{translations[language].call}</Typography>
               </Button>
             </a>
           </motion.div>

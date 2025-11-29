@@ -1,7 +1,6 @@
 import Project from './Project';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
-
 import {
   containerVariants,
   itemVariants,

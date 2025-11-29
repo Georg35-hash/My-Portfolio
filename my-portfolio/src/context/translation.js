@@ -1,7 +1,11 @@
 import bedLinenShop from '../assets/myprojects/bed-linen-shop.png';
 import petShop from '../assets/myprojects/pet-shop.png';
+import immoTon from '../assets/myprojects/immo.png';
 export const translations = {
   en: {
+    recent: 'Recent',
+    all: 'All',
+    call: 'Shedule a call',
     recentPosts: 'Recent Posts',
     allNews: 'All News',
     home: 'Home',
@@ -12,6 +16,9 @@ export const translations = {
     languageEn: 'EN',
   },
   de: {
+    recent: 'Vor kurzem',
+    all: 'Nachrichten',
+    call: 'Vereinbaren Sie einen Anruf',
     recentPosts: 'Neueste Beiträge',
     allNews: 'Alle Nachrichten',
     home: 'Startseite',
@@ -297,6 +304,13 @@ export const projectsList = {
       githubLink: 'https://github.com/Georg35-hash/Pet-shop/tree/main/pet-shop',
       liveDemoLink: 'https://pet-shop-react-ebon.vercel.app/',
     },
+    {
+      id: 3,
+      title: 'Real estate company',
+      image: immoTon,
+      desc: 'A website for a real german estate company. The project was developed using React.js + Typescript, nodemailer, Recaptcha, Node.js, and MUI.',
+      liveDemoLink: 'https://immo-tonn.de/',
+    },
   ],
   de: [
     {
@@ -314,6 +328,13 @@ export const projectsList = {
       desc: 'Onlineshop für Tierprodukte. Dieses Projekt umfasst die Arbeit mit Zustand, Axios, React Router, Express und Node JS.',
       githubLink: 'https://github.com/Georg35-hash/Pet-shop/tree/main/pet-shop',
       liveDemoLink: 'https://pet-shop-react-ebon.vercel.app/',
+    },
+    {
+      id: 3,
+      title: 'Immobilienunternehmen',
+      image: immoTon,
+      desc: 'Eine Website für ein deutsches Immobilienunternehmen. Das Projekt wurde mit React.js + TypeScript, Nodemailer, Recaptcha, Node.js und MUI entwickelt.',
+      liveDemoLink: 'https://immo-tonn.de/',
     },
   ],
 };

@@ -1,7 +1,10 @@
 import { AppBar, Tab, Tabs } from '@mui/material';
 import { Link, useLocation } from 'react-router';
+import { usePosts } from '../../context/NewsContextProvider';
+import { translations } from '../../context/translation';
 
 export default function NavTabs() {
+  const { language } = usePosts();
   const location = useLocation();
 
   const currentTab = location.pathname === '/all' ? 1 : 0;
@@ -19,8 +22,12 @@ export default function NavTabs() {
         indicatorColor="secondary"
         centered
       >
-        <Tab label="Recent" component={Link} to="/recent" />
-        <Tab label="All" component={Link} to="/all" />
+        <Tab
+          label={translations[language].recent}
+          component={Link}
+          to="/recent"
+        />
+        <Tab label={translations[language].all} component={Link} to="/all" />
       </Tabs>
     </AppBar>
   );
