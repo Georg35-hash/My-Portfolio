@@ -2,7 +2,6 @@ import { AppBar, Tab, Tabs } from '@mui/material';
 import { Link, useLocation } from 'react-router';
 import { usePosts } from '../../context/NewsContextProvider';
 import { translations } from '../../context/translation';
-
 export default function NavTabs() {
   const { language } = usePosts();
   const location = useLocation();
