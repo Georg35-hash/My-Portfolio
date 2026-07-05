@@ -33,7 +33,7 @@ export default function ContactForm() {
         'template_y9b1o3r',
         {
           user_email: data.email,
-          user_name: data.name,
+          name: data.name,
           user_message: data.message,
         },
         'DHocbzH561cuvoxch',
@@ -42,9 +42,11 @@ export default function ContactForm() {
       reset();
     } catch (err) {
       console.error('Email sending failed:', err);
+      const apiError =
+        err?.response?.data?.message || err?.text || err?.statusText || err?.message;
       setError('email', {
         type: 'manual',
-        message: 'Failed to send your message. Please try again later.',
+        message: `Failed to send your message. ${apiError}`,
       });
     }
   };

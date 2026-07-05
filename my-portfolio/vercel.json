@@ -7,4 +7,3 @@
       { "source": "/posts/:id", "destination": "/index.html" }
     ]
   }
-  

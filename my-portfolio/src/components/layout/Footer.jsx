@@ -1,6 +1,6 @@
 import {
   Box,
-  OutlinedInput,
+  TextField,
   Typography,
   CardContent,
   Card,
@@ -52,9 +52,10 @@ export default function Footer() {
     try {
       await emailjs.send(
         'service_rsi6x48',
-        'template_0s8o3xg',
+        'template_y9b1o3r',
         {
           user_email: data.email,
+          name: data.email,
         },
         'DHocbzH561cuvoxch',
       );
@@ -62,12 +63,16 @@ export default function Footer() {
       reset();
     } catch (err) {
       console.error('Email sending failed:', err);
+      const apiStatus = err?.status || err?.response?.status;
+      const apiError =
+        err?.response?.data?.message || err?.text || err?.statusText || err?.message || '';
+      const statusText = apiStatus === 422 ? 'Unprocessable Entity' : apiStatus;
       setError('email', {
         type: 'manual',
         message:
           language === 'de'
-            ? 'Abonnement fehlgeschlagen. Bitte versuchen Sie es später erneut.'
-            : 'Failed to subscribe. Please try again later.',
+            ? `Abonnement fehlgeschlagen. ${statusText}: ${apiError}`
+            : `Failed to subscribe. ${statusText}: ${apiError}`,
       });
     }
   };
@@ -103,7 +108,7 @@ export default function Footer() {
                 gap={1}
                 sx={{ width: { xs: '100%', sm: 'auto' } }}
               >
-                <OutlinedInput
+                <TextField
                   autoComplete="email"
                   placeholder={
                     language === 'de'
@@ -125,12 +130,8 @@ export default function Footer() {
                     },
                   })}
                   error={!!errors.email}
+                  helperText={errors.email?.message}
                 />
-                {errors.email && (
-                  <Typography variant="caption" color="error">
-                    {errors.email.message}
-                  </Typography>
-                )}
                 <ButtonEmail initialText={subscribeButtonText} />
                 <Typography
                   variant="caption"
